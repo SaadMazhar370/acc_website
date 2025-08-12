@@ -1462,4 +1462,4 @@ function enqueue_custom_cart_script() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_cart_script');
 
-
+echo '<!-- Custom Cart Script Loaded -->';
