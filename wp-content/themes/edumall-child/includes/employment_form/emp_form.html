@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employment Application</title>
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        font-size: 11px;
+        color: #333;
+        background-color: #fff;
+        margin: 10px;
+        line-height: 1.4;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    h1 {
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    h2, h3, .section-title {
+        font-size: 13px;
+        font-weight: bold;
+        background: #f0f0f0;
+        padding: 6px 10px;
+        margin: 20px 0 8px;
+        border-left: 4px solid #3498db;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 8px 0;
+    }
+
+    th, td {
+        font-size: 10px;
+        text-align: left;
+        vertical-align: top;
+        border: 1px solid #ccc;
+        padding: 6px 8px;
+    }
+
+    th {
+        background-color: #f9f9f9;
+        font-weight: bold;
+    }
+
+    .section {
+        margin-top: 15px;
+    }
+
+    .data {
+        background-color: #f9f9f9;
+        padding: 6px;
+        border-radius: 4px;
+    }
+
+    .image-box img {
+        max-width: 100%;
+        max-height: 150px;
+        object-fit: contain;
+        border: 1px solid #ccc;
+        padding: 4px;
+        background-color: #fff;
+    }
+
+    label {
+        font-weight: bold;
+    }
+
+    p {
+        margin: 6px 0;
+        font-size: 10px;
+    }
+</style>
+
+</head>
+<body>
+<div class="container">
+    <h1>Employment Application</h1>
+
+    <div class="section">
+        <div class="section-title">Applicant's Information</div>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>First Name</th>
+                <th>Middel Name</th>
+                <th>Last Name</th>
+                <th>List any other name(s) used in the past (for background verification)</th>
+</tr>                
+            </thead>
+            <tr><td>{{first_name}}</td>
+            <td>{{middle_name}}</td>
+            <td>{{last_name}}</td>
+            <td>{{other_names}}</td>
+            </tr>
+           
+        </table>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>Email</th>
+                <th>Phone</th>
+</tr>                
+            </thead>
+            <tr>
+            <td>{{email}}</td>
+            <td>{{cell_phone}}</td>
+            </tr>
+           
+        </table>
+    </div>
+    <div class="section">
+        <div class="section-title">Contact Information</div>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>Address</th>
+                <th>Majlis</th>
+                <th>Aims Code</th>
+                <th>Home Number</th>
+                <th>Cell Phone</th>
+</tr>                
+            </thead>
+            <tr><td>{{address}}</td>
+            <td>{{majlis}}</td>
+            <td>{{aims_code}}</td>
+            <td>{{home_phone}}</td>
+            <td>{{cell_phone}}</td>
+            </tr>
+           
+        </table>
+    
+    </div>
+    <div class="section">
+        <div class="section-title">Additional Information</div>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>Are you a Waqifa?</th>
+                <th>If yes, Waqf-e-Nau number</th>
+</tr>                
+            </thead>
+            <tr><td>{{is_waqifa}}</td>
+            <td>{{waqifa_number}}</td>
+            </tr>
+           
+        </table>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>Are you currently serving in Jama'at at:</th>
+                <th>If yes, please give details:</th>
+</tr>                
+            </thead>
+            <tr>
+            <td>{{serving_in_jamaat}}</td>
+            <td>{{serving_details}}</td>
+            </tr>
+           
+        </table>
+    
+    </div>
+
+    <div class="section">
+        <div class="section-title">Employment Eligibility</div>
+        <table>
+            <tr><th>Are you legally eligible to work in Canada for any employer?</th><td>{{canada_eligible}}</td></tr>
+            <tr><th>Have you ever been convicted of an act for which pardon has not been granted?</th><td>{{convicted}}</td></tr>
+            <tr><th>Have you ever worked for 'Aisha Academy Canada'?</th><td>{{worked_before}}</td></tr>
+            <tr><th>Position you are applying for: </th><td>{{position}}</td></tr>
+            <tr><th>If yes, write the start and end dates:</th><td>{{work_dates}}</td></tr>
+            <tr><th>Hours you are interested in:</th><td>{{hours_interested}}</td></tr>
+        </table>
+    </div>
+
+
+
+
+<div class="section">
+    <div class="section-title">Aisha Academy</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Time</th>
+                <th>Qualifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{aisha_courses_rows}}
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="section">
+    <div class="section-title">Girls' Hifzul Qur'an School</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Class</th>
+                <th>Qualifications</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{hifz_classes_rows}}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+    <div class="section">
+        <div class="section-title">Teaching Preferences</div>
+        <table>
+            <tr><th>Preference #1</th><td>{{preference_1}}</td></tr>
+            <tr><th>Preference #2</th><td>{{preference_2}}</td></tr>
+            <tr><th>Preference #3</th><td>{{preference_3}}</td></tr>
+            <tr><th>Preference #4</th><td>{{preference_4}}</td></tr>
+            <tr><th>Preference #5</th><td>{{preference_5}}</td></tr>
+        </table>
+    </div>
+
+        <div class="section">
+        <div class="section-title">Skills & Qualifications</div>
+        <p>Identify any relevant professional development or training which you have undergone in the last 5 years:</p>
+        <table>
+          
+            <tr><td>{{qualifications}}</td>
+            </tr>
+           
+        </table>
+    
+    </div>
+
+
+<div class="section">
+    <div class="section-title">Language Proficiency</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Language</th>
+                <th>Spoken</th>
+                <th>Written</th>
+                <th>Reading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>English</td>
+                <td>{{english_spoken}}</td>
+                <td>{{english_written}}</td>
+                <td>{{english_reading}}</td>
+            </tr>
+            <tr>
+                <td>Urdu</td>
+                <td>{{urdu_spoken}}</td>
+                <td>{{urdu_written}}</td>
+                <td>{{urdu_reading}}</td>
+            </tr>
+            <tr>
+                <td>{{other_language_name}}</td>
+                <td>{{other_language_spoken}}</td>
+                <td>{{other_language_written}}</td>
+                <td>{{other_language_reading}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="section">
+    <div class="section-title">Jama'at Reference</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Majlis</th>
+                <th>Local President Name</th>
+                <th>Phone Number</th>
+                <th>Jama'at Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{jamat_majlis}}</td>
+                <td>{{jamat_president_name}}</td>
+                <td>{{jamat_phone}}</td>
+                <td>{{jamat_email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="section">
+    <div class="section-title">Professional Reference #1</div>
+    <table>
+        <thead>
+            <tr>
+                 <th>Full Name</th>
+                <th>Title</th>
+                <th>Organization</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{prof_ref1_name}}</td>
+                <td>{{prof_ref1_title}}</td>
+                <td>{{prof_ref1_org}}</td>
+                <td>{{prof_ref1_phone}}</td>
+                <td>{{prof_ref1_email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="section">
+    <div class="section-title">Professional Reference #2</div>
+    <table>
+        <thead>
+            <tr>
+                 <th>Full Name</th>
+                <th>Title</th>
+                <th>Organization</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{prof_ref2_name}}</td>
+                <td>{{prof_ref2_title}}</td>
+                <td>{{prof_ref2_org}}</td>
+                <td>{{prof_ref2_phone}}</td>
+                <td>{{prof_ref2_email}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  <div class="section">
+        <div class="section-title">Personal Reference</div>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>Full Name</th>
+                <th>Relationship</th>
+                <th>Phone Number</th>
+                <th>Email Address</th>
+                </tr>
+            </thead>
+            <tr><td>{{personal_ref_name}}</td>
+            <td>{{personal_ref_relation}}</td>
+            <td>{{personal_ref_phone}}</td>
+            <td>{{personal_ref_email}}</td>
+            </tr>
+           
+        </table>
+     
+    </div>
+  <div class="section">
+        <div class="section-title">Background Check Consent</div>
+        <table>
+            <thead>
+                            <tr>
+
+                <th>If asked, do you consent to a background check?</th>                
+</tr>
+            </thead>
+            <tr>
+                <td>{{background_check_consent}}</td>
+            </tr>
+           
+        </table>
+     
+    </div>
+  <div class="section">
+        <div class="section-title">Disclaimer</div>
+        <table>
+            <tr><td>
+                <p>
+                    I, the applicant, certify that the information provided is true to the best of my knowledge. If this application leads to my eventual employment, I understand that any false or misleading information in my application or interview may result in my employment being terminated.
+
+                </p>
+            </td>
+            </tr>
+           
+        </table>
+     
+    </div>
+
+    <div class="section">
+        <div class="section-title">Declaration</div>
+        <table>
+            <tr><th>Print Name</th><td>{{print_name}}</td></tr>
+            <tr><th>Signature</th><td>{{signature}}</td></tr>
+            <tr><th>Date</th><td>{{signature_date}}</td></tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

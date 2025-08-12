@@ -1,0 +1,7 @@
+Array
+(
+    [action] => submit_test_form
+    [_wpnonce] => 3b38bec802
+    [_wp_http_referer] => /new-page/
+    [test_field] => DDD
+)
