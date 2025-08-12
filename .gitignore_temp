@@ -1,0 +1,37 @@
+# Ignore everything
+/*
+
+# Allow wp-content
+!wp-content/
+
+# Inside wp-content, ignore everything first
+wp-content/*
+
+# Allow only our plugin
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/student-manager/**
+
+# Allow only our child theme
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/edumall-child/**
+
+# Ignore uploads, cache, and other WP-specific stuff
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Ignore WordPress core and config
+wp-admin/
+wp-includes/
+wp-config.php
+index.php
+license.txt
+readme.html
+wp-*.php
+xmlrpc.php
+
+# Ignore logs & htaccess
+*.log
+/.htaccess
