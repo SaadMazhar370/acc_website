@@ -1,48 +1,37 @@
-# Wordpress - ignore core, configuration, examples, uploads and logs.
-# https://github.com/github/gitignore/blob/main/WordPress.gitignore
+# Ignore everything by default
+/*
 
-# Core
-#
-# Note: if you want to stage/commit WP core files
-# you can delete this whole section/until Configuration.
-/wp-admin/
-/wp-content/index.php
-/wp-content/languages
-/wp-content/plugins/index.php
-/wp-content/themes/index.php
-/wp-includes/
-/index.php
-/license.txt
-/readme.html
-/wp-*.php
-/xmlrpc.php
+# Allow wp-content
+!wp-content/
 
-# Configuration
+# Inside wp-content, ignore everything first
+wp-content/*
+
+# Allow only our plugin
+!wp-content/plugins/
+wp-content/plugins/*
+!wp-content/plugins/student-manager/**
+
+# Allow only our child theme
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/edumall-child/**
+
+# Ignore uploads, cache, and other WP-specific stuff
+wp-content/uploads/
+wp-content/cache/
+wp-content/upgrade/
+
+# Ignore WordPress core and config
+wp-admin/
+wp-includes/
 wp-config.php
+index.php
+license.txt
+readme.html
+wp-*.php
+xmlrpc.php
 
-# Example themes
-/wp-content/themes/twenty*/
-
-# Example plugin
-/wp-content/plugins/hello.php
-
-# Uploads
-/wp-content/uploads/
-
-# Log files
+# Ignore logs & htaccess
 *.log
-
-# htaccess
 /.htaccess
-
-# All plugins
-#
-# Note: If you wish to whitelist plugins,
-# uncomment the next line
-#/wp-content/plugins
-
-# All themes
-#
-# Note: If you wish to whitelist themes,
-# uncomment the next line
-#/wp-content/themes
